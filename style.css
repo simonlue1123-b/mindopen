@@ -1,0 +1,200 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: #111;
+  color: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #1f2933, #0b1018 60%, #05070b);
+}
+
+.app {
+  width: min(720px, 92vw);
+  padding: 2.5rem 2rem 3rem;
+  border-radius: 24px;
+  background: rgba(6, 10, 20, 0.85);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app__header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.app__header h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+.app__subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(245, 245, 245, 0.75);
+}
+
+.app__controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.app__button {
+  border: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5d7cff, #7d5dfd);
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 24px rgba(93, 124, 255, 0.25);
+}
+
+.app__button:hover,
+.app__button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(93, 124, 255, 0.35);
+}
+
+.app__button:active {
+  transform: translateY(1px);
+}
+
+.app__entries {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app__entries h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: rgba(245, 245, 245, 0.85);
+}
+
+.entry {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(7, 12, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 1rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+}
+
+.entry__details {
+  margin: 0 0 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.entry__details dt {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.entry__details dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.entry__time {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 6, 12, 0.75);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  z-index: 10;
+}
+
+.dialog__form {
+  width: min(480px, 100%);
+  background: rgba(10, 14, 24, 0.95);
+  border-radius: 18px;
+  padding: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.dialog__title {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.dialog__content {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.dialog__content label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dialog__content textarea,
+.dialog__content input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(4, 8, 16, 0.9);
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+  min-height: 3.5rem;
+}
+
+.dialog__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 520px) {
+  .app {
+    padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .app__controls {
+    flex-direction: column;
+  }
+
+  .dialog__form {
+    padding: 1.25rem;
+  }
+}

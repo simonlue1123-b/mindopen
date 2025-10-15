@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindOpen 極簡工具</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>MindOpen</h1>
+        <p class="app__subtitle">在幻想、恐懼與行動之間建立橋樑</p>
+      </header>
+
+      <section class="app__controls">
+        <button id="fantasyButton" class="app__button">記錄幻想</button>
+        <button id="fearButton" class="app__button">記錄恐懼</button>
+        <button id="actionButton" class="app__button">設定行動</button>
+      </section>
+
+      <section class="app__entries" aria-live="polite">
+        <h2>最新記錄</h2>
+        <div id="entries"></div>
+      </section>
+    </main>
+
+    <template id="entryTemplate">
+      <article class="entry">
+        <h3 class="entry__title"></h3>
+        <dl class="entry__details"></dl>
+        <time class="entry__time"></time>
+      </article>
+    </template>
+
+    <template id="dialogTemplate">
+      <div class="dialog" role="dialog" aria-modal="true">
+        <form class="dialog__form">
+          <h2 class="dialog__title"></h2>
+          <div class="dialog__content"></div>
+          <div class="dialog__actions">
+            <button type="submit" class="app__button dialog__submit">儲存</button>
+            <button type="button" class="app__button dialog__cancel">取消</button>
+          </div>
+        </form>
+      </div>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
